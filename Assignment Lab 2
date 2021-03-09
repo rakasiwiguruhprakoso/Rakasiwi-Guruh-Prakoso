@@ -1,0 +1,53 @@
+package com.company;
+
+import java.util.Random;
+import java.util.Scanner;
+import java.text.DecimalFormat;
+
+public class Main
+{
+
+    public static void main(String[] args)
+    {
+	Random acak = new Random () ;
+	int angka1 = acak.nextInt (9) ;
+	int angka2 = acak.nextInt (9) ;
+	int input, msk1, msk2;
+
+	System.out.println("Angka Acak : " + angka1 + "" + angka2);
+
+	Scanner read = new Scanner(System.in);
+	System.out.println("Masukkan angka lorte : ");
+	input = read.nextInt();
+
+	DecimalFormat kepada = new DecimalFormat("00");
+	if (input >= 99 )
+    {
+        System.out.println("INVALID NUMBER");
+    }
+	else
+    {
+        String inputkepada  = kepada.format(input);
+
+        msk1 = Character.getNumericValue(inputkepada.charAt(0));
+        msk2 = Character.getNumericValue(inputkepada.charAt(1));
+
+        if (msk1 == angka1 && msk2 == angka2)
+        {
+            System.out.println("Selamat Anda Mendapatkan Hadiah Sebesar $ 10.000");
+        }
+        else if (msk1 == angka2 && msk2 == angka1)
+        {
+            System.out.println("Selamat Anda Mendapatkan Hadiah Sebesar $ 3.000");
+        }
+        else if (msk1 == angka1 || msk2 == angka2 || msk1 == angka2 || msk2 == angka1)
+        {
+            System.out.println("Selamat Anda Mendapatkan Hadiah Sebesar $ 1.000");
+        }
+        else
+        {
+            System.out.println("Maaf Anda Tidak Beruntung");
+        }
+    }
+    }
+}
