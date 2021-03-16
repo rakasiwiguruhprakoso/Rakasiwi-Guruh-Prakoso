@@ -1,0 +1,31 @@
+package com.company;
+
+import java.util.*;
+
+public class Main
+{
+
+    public static void main(String[] args)
+    {
+        int acak, tebak, hasil;
+        acak = (int) (Math.random() * 100);
+        System.out.println("Guess a magic number between 0 and 100");
+        Scanner masukan = new Scanner(System.in);
+        hasil = 0;
+
+        do {
+            hasil++;
+            System.out.print("Enter your guess: ");
+            tebak = masukan.nextInt();
+
+            if (tebak > acak) {
+                System.out.println("Your guess is too high");
+            } else if (tebak < acak) {
+                System.out.println("Your guess is too low");
+            } else {
+                System.out.print("Yes, the number is " + acak);
+            }
+        } while (tebak != acak);
+    }
+}
+
