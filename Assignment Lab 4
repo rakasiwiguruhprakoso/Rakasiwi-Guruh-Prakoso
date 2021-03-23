@@ -1,0 +1,32 @@
+package com.company;
+
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+	// write your code here
+        String namakota,kotakedua;
+
+        Scanner scan = new Scanner(System.in);
+        System.out.println("---Masukkan Nama Kota---");
+        System.out.print("Nama Kota: ");
+
+        namakota = scan.nextLine();
+
+        System.out.println("---Masukkan Nama Kota---");
+        System.out.print("Nama Kota: ");
+
+        kotakedua = scan.nextLine();
+
+
+        System.out.println("--------------------");
+        System.out.println("Nama Kota yang Berhasil terinput :");
+        if (namakota.compareTo(kotakedua) > 0){
+            System.out.println(kotakedua + "\n" + namakota);
+        }
+        else if (namakota.compareTo(kotakedua) > 0){
+            System.out.println(namakota + "\n" + kotakedua);
+        }
+    }
+}
