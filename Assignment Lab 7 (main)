@@ -1,0 +1,39 @@
+package com.company;
+
+import java.util.ArrayList;
+
+public class Main {
+
+    public static void main(String[] args) {
+        coba mata_kuliah1 = new coba("Kimia");
+        coba mata_kuliah2 = new coba("Biologi");
+
+        mata_kuliah1.addStudent("Peter jones");
+        mata_kuliah1.addStudent("Kim Smith");
+        mata_kuliah1.addStudent("Anne Kennedy");
+
+        mata_kuliah2.addStudent("Peter Jones");
+        mata_kuliah2.addStudent("steve Smith");
+
+        System.out.println("Number of Student in Course 1: "+ mata_kuliah1.getNmbrstd());
+        ArrayList<String> matkul1 = mata_kuliah1.getStd();
+        for(int a=0; a<matkul1.size(); a++){
+            System.out.println(matkul1.get(a) + ", ");
+        }
+        System.out.println("Number of Student in Course 2: "+ mata_kuliah2.getNmbrstd());
+        ArrayList<String> matkul2 = mata_kuliah2.getStd();
+        for(int a=0; a<matkul2.size(); a++){
+            System.out.println(matkul2.get(a) + ", ");
+        }
+        System.out.println("\nDrop Student : Peter Jones from course 1 ");
+        mata_kuliah1.del("Peter jones");
+        System.out.print("Number of Students in Course 1: "+ mata_kuliah1.getNmbrstd() + "\n");
+        for(int a=0; a<matkul1.size();a++){
+            if(a == matkul1.size() - 1){
+                System.out.println(matkul1.get(a));
+            }else
+                System.out.println(matkul1.get(a)+ ", ");
+        }
+    }
+    }
+
