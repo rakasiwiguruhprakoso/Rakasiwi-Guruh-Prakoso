@@ -1,0 +1,41 @@
+package com.company;
+
+import java.util.ArrayList;
+
+public class coba {
+
+    private String Mhs;
+    private ArrayList<String> std = new ArrayList<>();
+    private int nmbrstd = 0;
+
+    coba (String Mhs){
+        this.Mhs = Mhs;
+    }
+
+    public String getMhs(){
+        return Mhs;
+    }
+
+    public void addStudent(String std){
+        this.std.add(std);
+        nmbrstd++;
+    }
+
+    public void del(String std){
+        for(int i = 0; i< nmbrstd; i++ ){
+            if(this.std.get(i).equals(std)){
+                this.std.remove(i);
+                nmbrstd--;
+                break;
+            }
+        }
+    }
+
+    public ArrayList<String> getStd() {
+        return std;
+    }
+
+    public int getNmbrstd() {
+        return nmbrstd;
+    }
+}
